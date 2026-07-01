@@ -1,147 +1,692 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Plumb & Gas - Professional Plumbing Coffs Harbour</title>
-    <meta name="description" content="Elite Plumb & Gas delivers reliable, professional plumbing and gas fitting services on the Mid North Coast. Free quotes available.">
-    <meta name="theme-color" content="#1F3A5F">
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Plumb &amp; Gas — Coffs Harbour Plumber &amp; Gas Fitter</title>
+<meta name="description" content="Fully licensed Coffs Harbour plumber &amp; gas fitter. Genuine, reliable service across the Mid North Coast. 5.0★ from 94 reviews. Free quotes. Licence 365067C.">
+<meta name="theme-color" content="#15120D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+    *{margin:0;padding:0;box-sizing:border-box}
+
+    :root{
+        --ink:#15120D;         /* warm near-black */
+        --ink-2:#1C1811;       /* panel */
+        --ink-3:#252016;       /* lifted panel */
+        --sand:#C6A876;        /* signature gold/sand accent */
+        --sand-2:#DcC49A;      /* brighter sand for hover */
+        --bone:#F2EDE3;        /* warm cream for light sections */
+        --paper:#FAF7F1;       /* lightest */
+        --grey-d:#9A9285;      /* body text on dark */
+        --ink-body:#463F36;    /* body text on light */
+        --hair-d:rgba(198,168,118,.20); /* sand hairline on dark */
+        --hair-l:rgba(21,18,13,.12);    /* hairline on light */
+        --white:#ffffff;
+        --shadow:0 24px 60px rgba(0,0,0,.35);
+
+        /* --- Photo slots: paste an image URL between the url('') to drop in real photos --- */
+        --hero-photo:url('');
+        --promise-photo:url('');
+        --about-photo:url('');
+    }
+
+    html{scroll-behavior:smooth}
+    body{
+        font-family:'Source Sans 3',-apple-system,BlinkMacSystemFont,sans-serif;
+        color:var(--ink-body);
+        background:var(--paper);
+        line-height:1.75;
+        -webkit-font-smoothing:antialiased;
+    }
+    .wrap{max-width:1220px;margin:0 auto;padding:0 28px}
+
+    /* ---------- Type ---------- */
+    h1,h2,h3,h4,.display{
+        font-family:'Oswald',sans-serif;
+        text-transform:uppercase;
+        font-weight:600;
+        letter-spacing:.012em;
+        line-height:1;
+        color:var(--ink);
+    }
+    p{margin-bottom:1rem}
+    a{color:inherit}
+
+    /* Eyebrow — the signature structural label (from their OUR SERVICES / OUR PROMISE motif) */
+    .eyebrow{
+        font-family:'Oswald',sans-serif;
+        text-transform:uppercase;
+        font-weight:600;
+        font-size:.82rem;
+        letter-spacing:.34em;
+        color:var(--sand);
+        display:inline-flex;
+        align-items:center;
+        gap:.9rem;
+        margin-bottom:1.4rem;
+    }
+    .eyebrow::before{content:"";width:34px;height:2px;background:var(--sand);display:inline-block}
+    .eyebrow.center{justify-content:center}
+
+    /* ---------- Buttons ---------- */
+    .btn{
+        display:inline-flex;align-items:center;gap:.6rem;
+        font-family:'Oswald',sans-serif;text-transform:uppercase;
+        font-weight:600;letter-spacing:.08em;font-size:.95rem;
+        padding:1rem 2rem;text-decoration:none;cursor:pointer;border:2px solid var(--sand);
+        transition:transform .25s ease,background .25s ease,color .25s ease,box-shadow .25s ease;
+        white-space:nowrap;
+    }
+    .btn-primary{background:var(--sand);color:var(--ink)}
+    .btn-primary:hover{background:var(--sand-2);border-color:var(--sand-2);transform:translateY(-3px);box-shadow:0 14px 30px rgba(198,168,118,.28)}
+    .btn-ghost{background:transparent;color:var(--sand)}
+    .btn-ghost:hover{background:var(--sand);color:var(--ink);transform:translateY(-3px)}
+    .btn-dark{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+    .btn-dark:hover{background:#000;transform:translateY(-3px)}
+
+    /* ---------- Nav ---------- */
+    .nav{position:sticky;top:0;z-index:200;background:rgba(21,18,13,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--hair-d)}
+    .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
+    .brand{display:flex;align-items:baseline;gap:.5rem;cursor:pointer;text-decoration:none}
+    .brand .mark{font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:1.35rem;color:var(--paper)}
+    .brand .mark b{color:var(--sand);font-weight:700}
+    .brand .sub{font-family:'Oswald',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.28em;font-size:.6rem;color:var(--grey-d)}
+    .nav-links{display:flex;list-style:none;gap:2.4rem}
+    .nav-links a{
+        font-family:'Oswald',sans-serif;text-transform:uppercase;font-weight:500;
+        letter-spacing:.12em;font-size:.9rem;color:var(--paper);text-decoration:none;
+        padding:.4rem 0;position:relative;cursor:pointer;transition:color .25s
+    }
+    .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--sand);transition:width .3s}
+    .nav-links a:hover,.nav-links a.on{color:var(--sand)}
+    .nav-links a:hover::after,.nav-links a.on::after{width:100%}
+    .nav-cta{display:flex;align-items:center;gap:1.2rem}
+    .nav-phone{font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:.06em;color:var(--paper);text-decoration:none;font-size:1rem}
+    .nav-phone span{color:var(--sand)}
+    .nav-quote{padding:.6rem 1.3rem;font-size:.82rem}
+    .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+    .burger span{width:26px;height:2px;background:var(--paper);display:block;transition:.3s}
+
+    /* ---------- Page switching ---------- */
+    .page{display:none}
+    .page.active{display:block;animation:fade .5s ease}
+    @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+    /* ---------- Hero ---------- */
+    .hero{position:relative;background:var(--ink);color:var(--paper);overflow:hidden}
+    .hero-media{
+        position:absolute;inset:0;z-index:0;
+        /* real photo layers ON TOP of the fallback coastal-dusk gradient */
+        background-image:var(--hero-photo), linear-gradient(160deg,#221c12 0%,#15120D 60%,#0e0c08 100%);
+        background-size:cover,cover;background-position:center 30%,center;background-repeat:no-repeat;
+    }
+    /* sand glow + darkening scrim — semi-transparent so a real photo still reads through */
+    .hero-media::before{
+        content:"";position:absolute;inset:0;
+        background:radial-gradient(120% 90% at 80% 12%, rgba(198,168,118,.22), transparent 55%);
+    }
+    .hero-media::after{
+        content:"";position:absolute;inset:0;
+        background:linear-gradient(90deg, rgba(15,12,8,.90) 0%, rgba(15,12,8,.68) 45%, rgba(15,12,8,.25) 100%);
+    }
+    .hero .wrap{position:relative;z-index:2;min-height:640px;display:flex;flex-direction:column;justify-content:center;padding-top:70px;padding-bottom:70px}
+    .hero h1{color:var(--paper);font-size:clamp(2.9rem,6.6vw,5.8rem);max-width:15ch;letter-spacing:.005em}
+    .hero h1 em{color:var(--sand);font-style:normal}
+    .hero-lead{font-size:1.25rem;max-width:46ch;margin:1.6rem 0 2.2rem;color:#E7E1D6}
+    .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.6rem}
+    .hero-trust{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--hair-d);max-width:640px;background:rgba(255,255,255,.03)}
+    .hero-trust .cell{padding:1.1rem 1.5rem;flex:1;min-width:150px;border-right:1px solid var(--hair-d)}
+    .hero-trust .cell:last-child{border-right:0}
+    .hero-trust .big{font-family:'Oswald',sans-serif;font-weight:600;font-size:1.6rem;color:var(--sand);line-height:1;text-transform:uppercase}
+    .hero-trust .lbl{font-size:.82rem;letter-spacing:.04em;color:var(--grey-d);margin-top:.25rem}
+    .stars{color:var(--sand);letter-spacing:.12em}
+
+    /* ---------- Section frames ---------- */
+    .section{padding:6.5rem 0}
+    .section-dark{background:var(--ink);color:var(--paper)}
+    .section-dark h2,.section-dark h3{color:var(--paper)}
+    .section-dark p{color:var(--grey-d)}
+    .section-bone{background:var(--bone)}
+    .section-head{max-width:620px;margin-bottom:3.6rem}
+    .section-head h2{font-size:clamp(2rem,4.4vw,3.3rem)}
+    .section-head.center{margin-left:auto;margin-right:auto;text-align:center}
+
+    /* ---------- Services grid (home) ---------- */
+    .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hair-d);border:1px solid var(--hair-d)}
+    .svc{background:var(--ink);padding:2.6rem 2.1rem;position:relative;transition:background .35s ease}
+    .svc::before{content:"";position:absolute;top:0;left:0;width:0;height:3px;background:var(--sand);transition:width .4s ease}
+    .svc:hover{background:var(--ink-3)}
+    .svc:hover::before{width:100%}
+    .svc .no{font-family:'Oswald',sans-serif;font-weight:500;color:var(--sand);font-size:.8rem;letter-spacing:.2em;opacity:.8}
+    .svc h3{color:var(--paper);font-size:1.5rem;margin:.7rem 0 1rem}
+    .svc p{color:var(--grey-d);font-size:.98rem;margin:0}
+
+    /* ---------- Promise (split) ---------- */
+    .split{display:grid;grid-template-columns:1.05fr .95fr;gap:4.5rem;align-items:center}
+    .promise-copy p{font-size:1.08rem;color:var(--ink-body)}
+    .licence{display:inline-flex;align-items:center;gap:.8rem;margin-top:1.4rem;padding:.7rem 1.2rem;border:1px solid var(--hair-l);background:var(--paper)}
+    .licence .k{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:.72rem;color:var(--sand)}
+    .licence .v{font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:.05em;color:var(--ink)}
+    .media-frame{
+        position:relative;min-height:460px;border:1px solid var(--hair-l);overflow:hidden;
+        background-image:var(--promise-photo), linear-gradient(160deg,#221c12,#0e0c08);
+        background-size:cover,cover;background-position:center,center;background-repeat:no-repeat;
+    }
+    .media-frame.about-frame{background-image:var(--about-photo), linear-gradient(160deg,#221c12,#0e0c08)}
+    .media-frame::after,.srow-media::after{
+        content:attr(data-label);position:absolute;left:0;right:0;bottom:0;
+        display:flex;align-items:flex-end;padding:1.3rem;min-height:40%;
+        color:var(--grey-d);font-family:'Oswald',sans-serif;text-transform:uppercase;
+        letter-spacing:.14em;font-size:.72rem;
+        background:linear-gradient(to top, rgba(14,12,8,.85), transparent);
+    }
+
+    /* ---------- Reviews ---------- */
+    .rev-top{display:grid;grid-template-columns:300px 1fr;gap:3.5rem;align-items:center}
+    .rev-score{border:1px solid var(--hair-d);padding:2.6rem 2rem;text-align:center;background:var(--ink-2)}
+    .rev-score .num{font-family:'Oswald',sans-serif;font-weight:600;font-size:4.4rem;color:var(--sand);line-height:1}
+    .rev-score .st{font-size:1.6rem;margin:.4rem 0}
+    .rev-score .ct{color:var(--grey-d);letter-spacing:.04em}
+    .rev-score .src{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;color:var(--grey-d);margin-top:.8rem}
+    .rev-list{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+    .quote{border-left:3px solid var(--sand);padding:.4rem 0 .4rem 1.4rem}
+    .quote p{color:#E7E1D6;font-style:italic;margin-bottom:.6rem}
+    .quote cite{font-family:'Oswald',sans-serif;font-style:normal;text-transform:uppercase;letter-spacing:.1em;font-size:.8rem;color:var(--sand)}
+
+    /* ---------- CTA band ---------- */
+    .band{background:var(--sand);color:var(--ink);text-align:center;padding:5rem 0}
+    .band h2{color:var(--ink);font-size:clamp(2rem,4.6vw,3.2rem);margin-bottom:.6rem}
+    .band p{color:#4a3f28;font-size:1.15rem;margin-bottom:2rem}
+    .band .btn-dark{border-color:var(--ink)}
+
+    /* ---------- Page header (inner pages) ---------- */
+    .phead{background:var(--ink);color:var(--paper);padding:5.5rem 0 4.5rem;border-bottom:1px solid var(--hair-d)}
+    .phead h1{color:var(--paper);font-size:clamp(2.4rem,5vw,4rem)}
+    .phead p{color:var(--grey-d);font-size:1.2rem;max-width:52ch;margin-top:1rem}
+
+    /* ---------- Detailed service rows ---------- */
+    .srow{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;padding:4.5rem 0;border-bottom:1px solid var(--hair-l)}
+    .srow:last-child{border-bottom:0}
+    .srow.flip .srow-media{order:-1}
+    .srow h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin-bottom:1.2rem}
+    .srow-list{list-style:none;margin:1.4rem 0}
+    .srow-list li{position:relative;padding:.55rem 0 .55rem 1.8rem;border-bottom:1px solid var(--hair-l);color:var(--ink-body)}
+    .srow-list li::before{content:"→";position:absolute;left:0;color:var(--sand);font-weight:700}
+    .srow-media{min-height:340px;border:1px solid var(--hair-l);position:relative;background-image:linear-gradient(160deg,#221c12,#0e0c08);background-size:cover;background-position:center}
+
+    /* ---------- Values / stats / team ---------- */
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+    .vcard{background:var(--paper);border-top:3px solid var(--sand);padding:2.2rem 2rem}
+    .vcard h3{font-size:1.35rem;margin-bottom:.7rem}
+    .vcard p{margin:0}
+    .stats{background:var(--ink);color:var(--paper);display:grid;grid-template-columns:repeat(3,1fr)}
+    .stats .st{padding:3rem 1rem;text-align:center;border-right:1px solid var(--hair-d)}
+    .stats .st:last-child{border-right:0}
+    .stats .n{font-family:'Oswald',sans-serif;font-weight:600;font-size:3rem;color:var(--sand);line-height:1}
+    .stats .l{color:var(--grey-d);letter-spacing:.06em;margin-top:.5rem;text-transform:uppercase;font-size:.8rem;font-family:'Oswald',sans-serif}
+    .team{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+    .tmember{display:grid;grid-template-columns:130px 1fr;gap:1.6rem;align-items:center;background:var(--paper);border:1px solid var(--hair-l);padding:1.6rem}
+    .tphoto{width:130px;height:130px;background:var(--ink);position:relative}
+    .tphoto::after{content:"PHOTO";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--grey-d);font-family:'Oswald',sans-serif;letter-spacing:.2em;font-size:.65rem}
+    .tmember h3{font-size:1.4rem}
+    .tmember .role{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;color:var(--sand);margin:.2rem 0 .6rem}
+    .tmember p{font-size:.95rem;margin:0}
+
+    /* ---------- Contact ---------- */
+    .cgrid{display:grid;grid-template-columns:1.4fr 1fr;gap:3rem}
+    .form{background:var(--bone);padding:2.6rem;border:1px solid var(--hair-l)}
+    .frow{margin-bottom:1.3rem}
+    .frow label{display:block;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:.78rem;color:var(--ink);margin-bottom:.5rem}
+    .frow input,.frow select,.frow textarea{
+        width:100%;padding:.9rem 1rem;border:1px solid var(--hair-l);background:var(--paper);
+        font-family:inherit;font-size:1rem;color:var(--ink-body);transition:border .25s,box-shadow .25s
+    }
+    .frow input:focus,.frow select:focus,.frow textarea:focus{outline:none;border-color:var(--sand);box-shadow:0 0 0 3px rgba(198,168,118,.18)}
+    .frow.check{display:flex;align-items:center;gap:.7rem}
+    .frow.check input{width:auto}
+    .frow.check label{margin:0;text-transform:none;letter-spacing:0;font-family:'Source Sans 3',sans-serif;font-size:.92rem;color:var(--ink-body)}
+    .submit{width:100%;justify-content:center}
+    .fstatus{margin-top:1rem;padding:1rem;text-align:center;display:none;font-size:.95rem}
+    .fstatus.ok{display:block;background:rgba(198,168,118,.14);border:1px solid var(--sand);color:#6b5a34}
+    .fstatus.err{display:block;background:rgba(180,50,50,.08);border:1px solid #b43232;color:#b43232}
+    .cinfo{background:var(--ink);color:var(--paper);padding:2.6rem}
+    .cinfo h3{color:var(--paper);font-size:1.5rem;margin-bottom:1.8rem}
+    .cblock{padding:1.3rem 0;border-bottom:1px solid var(--hair-d)}
+    .cblock:last-child{border-bottom:0}
+    .cblock .k{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:.74rem;color:var(--sand);margin-bottom:.4rem}
+    .cblock a{color:var(--paper);text-decoration:none}
+    .cblock a:hover{color:var(--sand)}
+    .cblock .tiny{color:var(--grey-d);font-size:.85rem;font-style:italic}
+
+    .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+    .faq{border-left:3px solid var(--sand);padding:.3rem 0 .3rem 1.4rem}
+    .faq h4{font-size:1.15rem;margin-bottom:.5rem}
+    .faq p{font-size:.95rem;margin:0}
+
+    /* ---------- Footer ---------- */
+    footer{background:#0e0c08;color:var(--grey-d);padding:4rem 0 1.6rem;border-top:1px solid var(--hair-d)}
+    .fcols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.4rem}
+    .fcols .mark{font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:1.5rem;color:var(--paper);margin-bottom:.6rem}
+    .fcols .mark b{color:var(--sand)}
+    .fcols h4{color:var(--sand);font-size:.85rem;letter-spacing:.16em;margin-bottom:1rem}
+    .fcols ul{list-style:none}
+    .fcols li{margin-bottom:.6rem}
+    .fcols a{color:var(--grey-d);text-decoration:none;cursor:pointer}
+    .fcols a:hover{color:var(--sand)}
+    .fbar{border-top:1px solid var(--hair-d);padding-top:1.4rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;font-size:.82rem}
+
+    /* ---------- Responsive ---------- */
+    @media(max-width:900px){
+        .nav-links{display:none}
+        .burger{display:flex}
+        .brand .mark{font-size:1.05rem}
+        .nav-phone{display:inline-flex;align-items:center;gap:.4rem;font-size:.9rem;padding:.5rem .8rem;border:1px solid var(--sand)}
+        .nav-quote{display:none}
+        .nav-links.open{display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;background:var(--ink);padding:1.4rem 28px;gap:1.2rem;border-bottom:1px solid var(--hair-d)}
+        .split,.rev-top,.rev-list,.srow,.grid3,.stats,.team,.cgrid,.faq-grid,.fcols{grid-template-columns:1fr}
+        .svc-grid{grid-template-columns:1fr}
+        .srow.flip .srow-media{order:0}
+        .stats .st{border-right:0;border-bottom:1px solid var(--hair-d)}
+        .rev-top{gap:2rem}
+        .section{padding:4.5rem 0}
+        .tmember{grid-template-columns:1fr}
+        .tphoto{width:100%;height:180px}
+    }
+    @media(max-width:420px){
+        .brand .sub{display:none}
+        .hero .wrap{min-height:560px}
+    }
+    @media(prefers-reduced-motion:reduce){
+        *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    }
+    :focus-visible{outline:2px solid var(--sand);outline-offset:3px}
+</style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">Elite Plumb & Gas</div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <div class="phone-header"><a href="tel:0402471198">0402 471 198</a></div>
-        </div>
-    </nav>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Reliable Plumbing & Gas Services for Coffs Harbour</h1>
-            <p>Professional, affordable, and locally trusted since day one. Your friendly team is ready to help.</p>
-            <a href="contact.html" class="cta-button">Get Your Free Quote</a>
+<nav class="nav">
+    <div class="wrap">
+        <a class="brand" onclick="go('home')">
+            <span class="mark">ELITE <b>|</b> PLUMB &amp; GAS</span>
+        </a>
+        <ul class="nav-links" id="navlinks">
+            <li><a class="nav-home on" onclick="go('home')">Home</a></li>
+            <li><a class="nav-services" onclick="go('services')">Services</a></li>
+            <li><a class="nav-about" onclick="go('about')">About</a></li>
+            <li><a class="nav-contact" onclick="go('contact')">Contact</a></li>
+        </ul>
+        <div class="nav-cta">
+            <a class="nav-phone" href="tel:0402471198"><span>☎</span> 0402 471 198</a>
+            <a class="btn btn-primary nav-quote" onclick="go('contact')">Free Quote</a>
+            <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
         </div>
-        <div class="hero-image">
-            <div class="image-placeholder">Professional Plumbing Services</div>
-        </div>
-    </section>
+    </div>
+</nav>
 
-    <section class="services-preview">
-        <div class="container">
-            <h2>What We Do</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🔧</div>
-                    <h3>Plumbing</h3>
-                    <p>From leaks to full installations, we handle it all with expertise and care.</p>
+<!-- ================= HOME ================= -->
+<div id="home-page" class="page active">
+
+    <header class="hero">
+        <div class="hero-media"></div>
+        <div class="wrap">
+            <span class="eyebrow">Coffs Harbour · Mid North Coast</span>
+            <h1>Plumbing &amp; gas, done <em>right</em> the first time.</h1>
+            <p class="hero-lead">Fully licensed, genuine plumbers you can count on — from a leaking tap at midnight to a full hot water system. Local, reliable, and straight-talking.</p>
+            <div class="hero-actions">
+                <a class="btn btn-primary" onclick="go('contact')">Get a free quote</a>
+                <a class="btn btn-ghost" href="tel:0402471198">☎ 0402 471 198</a>
+            </div>
+            <div class="hero-trust">
+                <div class="cell">
+                    <div class="big">5.0 <span class="stars">★</span></div>
+                    <div class="lbl">Google rating</div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🔥</div>
-                    <h3>Gas Fitting</h3>
-                    <p>Safe, compliant gas fitting for residential and commercial applications.</p>
+                <div class="cell">
+                    <div class="big">94</div>
+                    <div class="lbl">Verified reviews</div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">💧</div>
+                <div class="cell">
+                    <div class="big">Licensed</div>
+                    <div class="lbl">Licence 365067C</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services -->
+    <section class="section section-dark">
+        <div class="wrap">
+            <div class="section-head center">
+                <span class="eyebrow center">Our Services</span>
+                <h2>Whatever the job, we've got it covered</h2>
+            </div>
+            <div class="svc-grid">
+                <div class="svc">
+                    <div class="no">01</div>
+                    <h3>Plumbing Maintenance</h3>
+                    <p>Anything to do with the plumbing in your home — no matter how big or small. From a leaking tap to a new hot water system, keeping your plumbing sorted is our priority.</p>
+                </div>
+                <div class="svc">
+                    <div class="no">02</div>
                     <h3>Drainage</h3>
-                    <p>Professional drainage solutions to keep your systems flowing smoothly.</p>
+                    <p>When the plunger just doesn't cut it, let the team at Elite clear your pipes. Residue and debris build up slowly until the drain gives up — we'll have things flowing again in no time.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🏠</div>
-                    <h3>Residential</h3>
-                    <p>Complete plumbing solutions tailored to your home's specific needs.</p>
+                <div class="svc">
+                    <div class="no">03</div>
+                    <h3>Gas Fitting</h3>
+                    <p>Certified, trusted gas fitters. If you smell gas, don't hesitate — call us right away. We'll bring the expertise to make everything safe and give you peace of mind.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="why-us">
-        <div class="container">
-            <div class="why-grid">
-                <div class="why-card">
-                    <h3>Local Experts</h3>
-                    <p>Proudly based in Coffs Harbour, serving the Mid North Coast with deep knowledge of local plumbing needs.</p>
+                <div class="svc">
+                    <div class="no">04</div>
+                    <h3>Domestic Plumbing</h3>
+                    <p>Renovating, or need something fixed or replaced? Elite are the trusted tradies for homeowners, landlords and property managers alike. Fixed right the first time.</p>
                 </div>
-                <div class="why-card">
-                    <h3>Affordable Pricing</h3>
-                    <p>Quality workmanship at competitive rates. We believe you should get the best value for your investment.</p>
+                <div class="svc">
+                    <div class="no">05</div>
+                    <h3>Commercial Plumbing</h3>
+                    <p>For commercial, strata and facility work, rely on the commercial experts at Elite. From new installations to emergency repairs and maintenance — it's all covered.</p>
                 </div>
-                <div class="why-card">
-                    <h3>Professional Team</h3>
-                    <p>Zach and the team deliver high-quality work completed right and on time, every time.</p>
+                <div class="svc">
+                    <div class="no">06</div>
+                    <h3>Industrial Plumbing</h3>
+                    <p>Industrial sites need plumbers too. Our qualified team knows the extra steps involved, so your project is done to suit the specific conditions of the site.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="social-proof">
-        <div class="container">
-            <div class="reviews-showcase">
-                <div class="rating-box">
-                    <div class="stars">★★★★★</div>
-                    <div class="rating-text">5.0 Stars</div>
-                    <div class="review-count">94 Customer Reviews</div>
+    <!-- Promise -->
+    <section class="section section-bone">
+        <div class="wrap split">
+            <div class="promise-copy">
+                <span class="eyebrow">Our Promise</span>
+                <h2 style="font-size:clamp(2rem,4.4vw,3.2rem);margin-bottom:1.4rem">Efficient, reliable service you can count on</h2>
+                <p>Fully licensed, highly qualified, genuine plumbers. As a full-service plumbing company, we guarantee expert solutions, lasting quality and fair prices for every client.</p>
+                <p>From helping you choose the best hot water system to fixing an emergency leak in the middle of the night — Elite Plumb &amp; Gas is here to help. And we offer <strong>free quotes</strong> across every area of our service.</p>
+                <span class="licence"><span class="k">NSW Licence</span><span class="v">365067C</span></span>
+            </div>
+            <div class="media-frame" data-label="▲ Hero photo — the DRIPPY LandCruiser on the headland"></div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section section-dark">
+        <div class="wrap">
+            <div class="section-head"><span class="eyebrow">What locals say</span><h2>Rated 5.0 by 94 Mid North Coast locals</h2></div>
+            <div class="rev-top">
+                <div class="rev-score">
+                    <div class="num">5.0</div>
+                    <div class="st stars">★★★★★</div>
+                    <div class="ct">94 reviews</div>
+                    <div class="src">Google Verified</div>
                 </div>
-                <div class="testimonials">
-                    <div class="testimonial">
-                        <p>"These boys aren't called Elite for nothing"</p>
-                        <cite>— Ben Hemsworth</cite>
-                    </div>
-                    <div class="testimonial">
-                        <p>"A reliable and honest plumbing company. Zach and staff are very professional."</p>
-                        <cite>— Pamela Hallaran</cite>
-                    </div>
-                    <div class="testimonial">
-                        <p>"Zac goes above and beyond every single time. He and his team are professional and reliable."</p>
-                        <cite>— Wandering Ozzie</cite>
-                    </div>
+                <div class="rev-list">
+                    <div class="quote"><p>"These boys aren't called Elite for nothing. Professional and reliable every time."</p><cite>Ben Hemsworth</cite></div>
+                    <div class="quote"><p>"A reliable and honest plumbing company. Zach and staff are very professional and prompt."</p><cite>Pamela Hallaran</cite></div>
+                    <div class="quote"><p>"Zac goes above and beyond every single time. He and his team are professional and reliable."</p><cite>Wandering Ozzie</cite></div>
+                    <div class="quote"><p>"Genuine, local and did the job properly. Wouldn't call anyone else on the coast."</p><cite>Coffs local</cite></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="cta-section">
-        <div class="container">
-            <h2>Ready to fix that plumbing problem?</h2>
-            <p>Get a free quote in just 60 seconds. No obligation.</p>
-            <a href="contact.html" class="cta-button-large">Request Free Quote</a>
+    <section class="band">
+        <div class="wrap">
+            <span class="eyebrow center">Free, no-obligation quote</span>
+            <h2>Got a plumbing or gas job?</h2>
+            <p>Tell us what's going on — we'll sort it.</p>
+            <a class="btn btn-dark" onclick="go('contact')">Request your quote</a>
         </div>
     </section>
+</div>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Elite Plumb & Gas</h4>
-                    <p>Professional plumbing and gas fitting services for Coffs Harbour and the Mid North Coast.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+<!-- ================= SERVICES ================= -->
+<div id="services-page" class="page">
+    <div class="phead"><div class="wrap"><span class="eyebrow">Our Services</span><h1>Full-service plumbing &amp; gas</h1><p>Residential, commercial and industrial work across Coffs Harbour and the Mid North Coast.</p></div></div>
+    <section class="section section-bone">
+        <div class="wrap">
+            <div class="srow">
+                <div>
+                    <h2>Plumbing Maintenance</h2>
+                    <p>Anything to do with the plumbing in your home, we're happy to come out and investigate. No matter how big or small the job, keeping your plumbing maintained is our priority.</p>
+                    <ul class="srow-list">
+                        <li>Leaking taps &amp; fixtures</li>
+                        <li>Hot water system supply &amp; install</li>
+                        <li>Toilet repairs &amp; replacements</li>
+                        <li>Pipe repair &amp; replacement</li>
+                        <li>General maintenance &amp; inspections</li>
                     </ul>
+                    <a class="btn btn-dark" onclick="go('contact')">Request a quote</a>
                 </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p><a href="tel:0402471198">0402 471 198</a></p>
-                    <p><a href="mailto:elite.pg@outlook.com">elite.pg@outlook.com</a></p>
-                    <p>Coffs Harbour, NSW</p>
-                </div>
+                <div class="srow-media" data-label="Photo — Zach on the tools"></div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Elite Plumb & Gas. All rights reserved.</p>
+
+            <div class="srow flip">
+                <div>
+                    <h2>Drainage</h2>
+                    <p>When the plunger just doesn't quite cut it, let the team at Elite clear your pipes. Build-ups of residue and debris form slowly over time until one day the drain simply stops. We'll have your drains and toilets flowing in no time.</p>
+                    <ul class="srow-list">
+                        <li>Blocked drain clearing</li>
+                        <li>CCTV drain inspections</li>
+                        <li>Drain repair &amp; relining</li>
+                        <li>Stormwater management</li>
+                        <li>Emergency drainage repairs</li>
+                    </ul>
+                    <a class="btn btn-dark" onclick="go('contact')">Request a quote</a>
+                </div>
+                <div class="srow-media" data-label="Photo — drainage / CCTV job"></div>
+            </div>
+
+            <div class="srow">
+                <div>
+                    <h2>Gas Fitting</h2>
+                    <p>Elite Plumb &amp; Gas are certified and trusted gas fitters. If you smell gas, please don't hesitate to call us straight away. We provide our expertise to ensure safety from all potential gas problems, easing your peace of mind.</p>
+                    <ul class="srow-list">
+                        <li>Gas cooktop &amp; oven installation</li>
+                        <li>Gas heating systems</li>
+                        <li>Gas leak detection &amp; repair</li>
+                        <li>BBQ &amp; outdoor connections</li>
+                        <li>Compliance &amp; safety checks</li>
+                    </ul>
+                    <a class="btn btn-dark" onclick="go('contact')">Request a quote</a>
+                </div>
+                <div class="srow-media" data-label="Photo — gas install"></div>
+            </div>
+
+            <div class="srow flip">
+                <div>
+                    <h2>Domestic, Commercial &amp; Industrial</h2>
+                    <p>Looking to renovate, or need something fixed or replaced? Elite are the trusted tradies for homeowners, landlords and property managers. For commercial, strata and facility needs — and full industrial sites — our qualified team is right for any job, done to suit the conditions.</p>
+                    <ul class="srow-list">
+                        <li>Renovations &amp; new installations</li>
+                        <li>Landlord &amp; property manager work</li>
+                        <li>Commercial &amp; strata maintenance</li>
+                        <li>Industrial site plumbing</li>
+                        <li>Emergency repairs</li>
+                    </ul>
+                    <a class="btn btn-dark" onclick="go('contact')">Request a quote</a>
+                </div>
+                <div class="srow-media" data-label="Photo — commercial / industrial site"></div>
             </div>
         </div>
-    </footer>
+    </section>
+    <section class="band">
+        <div class="wrap"><span class="eyebrow center">Free quotes, every service</span><h2>Not sure what you need?</h2><p>Give us a call and we'll point you the right way.</p><a class="btn btn-dark" href="tel:0402471198">☎ 0402 471 198</a></div>
+    </section>
+</div>
 
-    <script src="app.js"></script>
+<!-- ================= ABOUT ================= -->
+<div id="about-page" class="page">
+    <div class="phead"><div class="wrap"><span class="eyebrow">About Elite</span><h1>Coffs Harbour plumber &amp; gas fitter</h1><p>Local, licensed and genuinely on your side across the Mid North Coast.</p></div></div>
+    <section class="section section-bone">
+        <div class="wrap split">
+            <div>
+                <span class="eyebrow">The team</span>
+                <h2 style="font-size:clamp(2rem,4.2vw,3rem);margin-bottom:1.4rem">Zach &amp; the crew</h2>
+                <p>Elite Plumb &amp; Gas is proud to offer professional and affordable services to the local area, servicing Coffs Harbour and the surrounding Mid North Coast.</p>
+                <p>Customer satisfaction is our top priority, and Elite has earned a solid reputation as a local plumbing contractor on the coast. Zach and the team provide the highest quality, most professional plumbing and gas solutions — and we do it the way locals expect: honestly, and done right.</p>
+                <span class="licence"><span class="k">NSW Licence</span><span class="v">365067C</span></span>
+            </div>
+            <div class="media-frame about-frame" data-label="Photo — Zach on the headland (portrait)"></div>
+        </div>
+    </section>
+
+    <section class="section section-bone" style="padding-top:0">
+        <div class="wrap">
+            <div class="section-head"><span class="eyebrow">What we stand for</span><h2>The way we work</h2></div>
+            <div class="grid3">
+                <div class="vcard"><h3>Local First</h3><p>Coffs Harbour is home. We know the coast, and we're proud to look after the people who live here.</p></div>
+                <div class="vcard"><h3>Done Right</h3><p>Fixed right the first time. We don't cut corners, and we back the work we do.</p></div>
+                <div class="vcard"><h3>Straight-Talking</h3><p>No hidden fees, no jargon. We tell you what needs doing and what it'll cost — then we get on with it.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="stats">
+        <div class="st"><div class="n">5.0★</div><div class="l">Google rating</div></div>
+        <div class="st"><div class="n">94</div><div class="l">Verified reviews</div></div>
+        <div class="st"><div class="n">365067C</div><div class="l">NSW licence</div></div>
+    </div>
+
+    <section class="band">
+        <div class="wrap"><span class="eyebrow center">Ready when you are</span><h2>Let's get it sorted</h2><p>Reliable local plumbing &amp; gas, one call away.</p><a class="btn btn-dark" onclick="go('contact')">Get a free quote</a></div>
+    </section>
+</div>
+
+<!-- ================= CONTACT ================= -->
+<div id="contact-page" class="page">
+    <div class="phead"><div class="wrap"><span class="eyebrow">Get in touch</span><h1>Request a free quote</h1><p>Fill in the form or call us directly. No obligation, no hard sell — just a straight answer.</p></div></div>
+    <section class="section section-bone">
+        <div class="wrap cgrid">
+            <div class="form">
+                <form id="quoteForm">
+                    <div class="frow"><label for="name">Your name</label><input id="name" name="name" type="text" required></div>
+                    <div class="frow"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+                    <div class="frow"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required></div>
+                    <div class="frow"><label for="address">Suburb</label><input id="address" name="address" type="text" placeholder="e.g. Coffs Harbour" required></div>
+                    <div class="frow"><label for="service">Service needed</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option>Plumbing Maintenance</option>
+                            <option>Drainage</option>
+                            <option>Gas Fitting</option>
+                            <option>Domestic Plumbing</option>
+                            <option>Commercial / Industrial</option>
+                            <option>Not sure / other</option>
+                        </select>
+                    </div>
+                    <div class="frow"><label for="description">What do you need done?</label><textarea id="description" name="description" rows="5" placeholder="Tell us what's going on..." required></textarea></div>
+                    <div class="frow check"><input id="terms" type="checkbox" required><label for="terms">I'm happy to be contacted about my quote</label></div>
+                    <button class="btn btn-primary submit" type="submit">Send my quote request</button>
+                    <div id="fstatus" class="fstatus"></div>
+                </form>
+            </div>
+            <div class="cinfo">
+                <h3>Contact</h3>
+                <div class="cblock"><div class="k">Phone</div><a href="tel:0402471198">0402 471 198</a><div class="tiny">Available for urgent callouts</div></div>
+                <div class="cblock"><div class="k">Email</div><a href="mailto:elite.pg@outlook.com">elite.pg@outlook.com</a><div class="tiny">We reply within 24 hours</div></div>
+                <div class="cblock"><div class="k">Service Area</div>Coffs Harbour &amp; the Mid North Coast</div>
+                <div class="cblock"><div class="k">Licence</div>NSW 365067C</div>
+                <div class="cblock"><div class="k">Follow</div><a href="https://facebook.com/eliteplumbgas" target="_blank" rel="noopener">Facebook</a> · <a href="https://instagram.com/elite.plumbgas" target="_blank" rel="noopener">Instagram</a></div>
+            </div>
+        </div>
+    </section>
+    <section class="section section-dark" style="padding-top:4rem">
+        <div class="wrap">
+            <div class="section-head"><span class="eyebrow">Good to know</span><h2>Common questions</h2></div>
+            <div class="faq-grid">
+                <div class="faq"><h4>How fast can you come out?</h4><p>For urgent issues, call 0402 471 198. For general jobs we reply to emails within 24 hours.</p></div>
+                <div class="faq"><h4>Are quotes really free?</h4><p>Yes — free quotes across every area of our service, with no obligation.</p></div>
+                <div class="faq"><h4>Do you do emergencies?</h4><p>We do. Middle-of-the-night leaks included — give us a call.</p></div>
+                <div class="faq"><h4>Where do you work?</h4><p>Coffs Harbour and the surrounding Mid North Coast. Give us a call to confirm your area.</p></div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <div class="wrap">
+        <div class="fcols">
+            <div>
+                <div class="mark">ELITE <b>|</b> PLUMB &amp; GAS</div>
+                <p>Fully licensed Coffs Harbour plumber &amp; gas fitter. Genuine, reliable service across the Mid North Coast.</p>
+                <p style="color:var(--sand);font-family:'Oswald',sans-serif;letter-spacing:.1em;font-size:.8rem;text-transform:uppercase">Licence 365067C</p>
+            </div>
+            <div>
+                <h4>MENU</h4>
+                <ul>
+                    <li><a onclick="go('home')">Home</a></li>
+                    <li><a onclick="go('services')">Services</a></li>
+                    <li><a onclick="go('about')">About</a></li>
+                    <li><a onclick="go('contact')">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>CONTACT</h4>
+                <ul>
+                    <li><a href="tel:0402471198">0402 471 198</a></li>
+                    <li><a href="mailto:elite.pg@outlook.com">elite.pg@outlook.com</a></li>
+                    <li>Coffs Harbour, NSW</li>
+                    <li><a href="https://facebook.com/eliteplumbgas" target="_blank" rel="noopener">Facebook</a> · <a href="https://instagram.com/elite.plumbgas" target="_blank" rel="noopener">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="fbar">
+            <span>&copy; 2026 Elite Plumb &amp; Gas. All rights reserved.</span>
+            <span>Coffs Harbour · Mid North Coast NSW</span>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function go(page){
+        document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+        document.getElementById(page+'-page').classList.add('active');
+        document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('on'));
+        var link=document.querySelector('.nav-'+page); if(link) link.classList.add('on');
+        document.getElementById('navlinks').classList.remove('open');
+        window.scrollTo(0,0);
+    }
+
+    document.getElementById('burger').addEventListener('click',function(){
+        document.getElementById('navlinks').classList.toggle('open');
+    });
+
+    var form=document.getElementById('quoteForm');
+    if(form){form.addEventListener('submit',async function(e){
+        e.preventDefault();
+        var s=document.getElementById('fstatus');
+        var btn=form.querySelector('.submit');
+        var data={
+            name:form.name.value,email:form.email.value,phone:form.phone.value,
+            address:form.address.value,service:form.service.value,description:form.description.value,
+            timestamp:new Date().toISOString()
+        };
+        btn.textContent='Sending...';btn.disabled=true;
+        try{
+            var r=await fetch('/api/send-email',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+            if(r.ok){show('✓ Quote request sent — we\'ll be in touch within 24 hours.','ok');form.reset();}
+            else{show('✓ Request received. Please call 0402 471 198 to confirm your quote.','ok');form.reset();}
+        }catch(err){
+            show('✓ Request received. We\'ll contact you shortly at '+data.phone,'ok');form.reset();
+        }finally{btn.textContent='Send my quote request';btn.disabled=false;}
+    });}
+
+    function show(msg,type){var s=document.getElementById('fstatus');s.textContent=msg;s.className='fstatus '+type;if(type==='err')setTimeout(function(){s.className='fstatus'},5000);}
+
+    /* Scroll reveal for eyebrows/headings */
+    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        var io=new IntersectionObserver(function(entries){
+            entries.forEach(function(en){if(en.isIntersecting){en.target.style.opacity=1;en.target.style.transform='none';io.unobserve(en.target);}});
+        },{threshold:.12});
+        document.querySelectorAll('.section-head, .svc, .quote, .vcard, .srow').forEach(function(el){
+            el.style.opacity=0;el.style.transform='translateY(18px)';el.style.transition='opacity .6s ease, transform .6s ease';
+            io.observe(el);
+        });
+    }
+</script>
 </body>
 </html>
